@@ -1,16 +1,15 @@
-# 🤖 Databricks MCP Server
+#  Databricks MCP Server
 
-Host Model Context Protocol (MCP) prompts and tools on Databricks Apps, enabling AI assistants like Claude to interact with your Databricks workspace through a secure, authenticated interface.
+Host Model Context Protocol (MCP) prompts and tools on Databricks Apps, enabling AI assistants like Claude to interact with your Databricks workspace.
+Inspiration - https://github.com/databricks-solutions/custom-mcp-databricks-app#
 
 ## What is this?
 
 This template lets you create an MCP server that runs on Databricks Apps. You can:
-- 📝 **Add prompts** as simple markdown files in the `prompts/` folder
-- 🛠️ **Create tools** as Python functions that leverage Databricks SDK
-- 🔐 **Authenticate securely** with OAuth through Databricks Apps
-- 🚀 **Deploy instantly** to make your MCP server accessible to Claude
+-  **Add prompts** as simple markdown files in the `prompts/` folder
+-  **Create tools** as Python functions that leverage Databricks SDK
 
-Think of it as a bridge between Claude and your Databricks workspace - you define what Claude can see and do, and this server handles the rest.
+ A bridge between Claude and your Databricks workspace - you define what Claude can see and do, and this server handles the rest.
 
 ## How it Works
 
@@ -42,6 +41,11 @@ Think of it as a bridge between Claude and your Databricks workspace - you defin
    - Handles Databricks OAuth authentication automatically
    - Translates between Claude's stdio protocol and HTTP/SSE
    - Works with both local development and deployed apps
+  
+### Prerequisites
+   - Claude CLI
+   - Subscription to Databricks apps
+   - python
 
 ### Local Development
 
@@ -63,7 +67,6 @@ claude mcp add databricks-mcp-local --scope local -- \
   uvx --from git+ssh://git@github.com/YOUR-ORG/YOUR-REPO.git dba-mcp-proxy \
   --databricks-host $DATABRICKS_HOST \
   --databricks-app-url $DATABRICKS_APP_URL
-```
 
 ## Customization Guide
 
