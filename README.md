@@ -1,4 +1,4 @@
-# 🤖 Databricks MCP Server Template
+# 🤖 Databricks MCP Server
 
 Host Model Context Protocol (MCP) prompts and tools on Databricks Apps, enabling AI assistants like Claude to interact with your Databricks workspace through a secure, authenticated interface.
 
@@ -42,75 +42,6 @@ Think of it as a bridge between Claude and your Databricks workspace - you defin
    - Handles Databricks OAuth authentication automatically
    - Translates between Claude's stdio protocol and HTTP/SSE
    - Works with both local development and deployed apps
-
-## 🎬 Demo
-
-This 10-minute video shows you how to set up and use a Databricks MCP server with Claude: https://www.youtube.com/watch?v=oKE59zgb6e0
-
-[![Databricks MCP Demo](https://github.com/user-attachments/assets/315a0e35-73c0-47f7-9ce5-dfada3149101)](https://www.youtube.com/watch?v=oKE59zgb6e0)
-
-This video demonstrates creating your own MCP server with a custom jobs interface in Claude.
-
-## Quick Start
-
-### Create Your Own MCP Server
-
-#### Step 1: Use this template
-
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/databricks-solutions/custom-mcp-databricks-app/generate)
-
-Or use the GitHub CLI:
-```bash
-gh repo create my-mcp-server --template databricks-solutions/custom-mcp-databricks-app --private
-```
-
-#### Step 2: Clone and setup
-
-```bash
-# Clone your new repository
-git clone https://github.com/YOUR-USERNAME/my-mcp-server.git
-cd my-mcp-server
-
-# Run the interactive setup
-./setup.sh
-```
-
-This will:
-- Configure Databricks authentication
-- Set your MCP server name
-- Install all dependencies
-- Create your `.env.local` file
-
-#### Step 3: Deploy with Claude
-
-In Claude Code, run:
-```
-/setup-mcp
-```
-
-This will:
-- Deploy your MCP server to Databricks Apps
-- Configure the MCP integration
-- Show you available prompts and tools
-
-Then restart Claude Code to use your new MCP server.
-
-### Add to Claude CLI
-
-After deployment, add your MCP server to Claude:
-
-```bash
-# Set your Databricks configuration
-export DATABRICKS_HOST="https://your-workspace.cloud.databricks.com"
-export DATABRICKS_APP_URL="https://your-app.databricksapps.com"  # Get this from ./app_status.sh
-export SERVER_NAME="your-server-name"  # This comes from config.yaml (set during ./setup.sh)
-
-# Add your MCP server to Claude (user-scoped)
-claude mcp add $SERVER_NAME --scope user -- \
-  uvx --from git+ssh://git@github.com/YOUR-USERNAME/your-repo.git dba-mcp-proxy \
-  --databricks-host $DATABRICKS_HOST \
-  --databricks-app-url $DATABRICKS_APP_URL
-```
 
 ### Local Development
 
