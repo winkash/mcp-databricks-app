@@ -259,39 +259,7 @@ The `claude_scripts/` directory contains 6 testing tools for thorough MCP valida
 ./claude_scripts/inspect_local_mcp.sh        # Local server web interface
 ./claude_scripts/inspect_remote_mcp.sh       # Remote server web interface
 ```
-
-**MCP Inspector Features:**
-- 🖥️ Web-based interface for interactive MCP server testing
-- 🔧 Visual tool execution with parameter input forms  
-- 📊 Real-time request/response monitoring
-- 🐛 Protocol-level debugging and error inspection
-- 📋 Complete tool and resource discovery
-
-#### What Each Test Validates
-
-| Test Type | Authentication | Protocol | Session Management | Tool Discovery |
-|-----------|---------------|----------|-------------------|----------------|
-| **curl tests** | ✅ | ✅ | ✅ | ✅ |
-| **proxy tests** | ✅ | ✅ | ✅ | ✅ |
-| **MCP Inspector** | ✅ | ✅ | ✅ | ✅ |
-
-All tests dynamically discover app URLs and handle OAuth authentication automatically.
-
-See [`claude_scripts/README.md`](claude_scripts/README.md) for detailed documentation.
-
-## Troubleshooting
-
-- **Authentication errors**: Run `databricks auth login` to refresh credentials
-- **MCP not found**: Ensure the app is deployed and accessible
-- **Tool errors**: Check logs at `https://your-app.databricksapps.com/logz`
-- **MCP connection issues**: 
-  - Check Claude logs: `tail -f ~/Library/Logs/Claude/*.log`
-  - Verify the proxy works: `uvx --from git+ssh://... dba-mcp-proxy --help`
-  - Test with echo pipe: `echo "list your mcp commands" | claude`
-- **Cached version issues**: If you get errors about missing arguments after an update:
-  ```bash
-  # Clear uvx cache for this package
-  rm -rf ~/.cache/uv/git-v0/checkouts/*/
+ckouts/*/
   # Or clear entire uv cache
   uv cache clean
   ```
