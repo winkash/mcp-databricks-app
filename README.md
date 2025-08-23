@@ -292,14 +292,3 @@ See [`claude_scripts/README.md`](claude_scripts/README.md) for detailed document
   # Or clear entire uv cache
   uv cache clean
   ```
-
-## Contributing
-
-1. Fork the repository
-2. Add your prompts and tools
-3. Test locally with `./watch.sh`
-4. Submit a pull request
-
-## License
-
-See [LICENSE.md](LICENSE.md)
