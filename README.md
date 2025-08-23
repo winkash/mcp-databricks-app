@@ -259,7 +259,3 @@ The `claude_scripts/` directory contains 6 testing tools for thorough MCP valida
 ./claude_scripts/inspect_local_mcp.sh        # Local server web interface
 ./claude_scripts/inspect_remote_mcp.sh       # Remote server web interface
 ```
-ckouts/*/
-  # Or clear entire uv cache
-  uv cache clean
-  ```
