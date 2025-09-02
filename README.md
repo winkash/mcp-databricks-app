@@ -1,7 +1,6 @@
 #  Databricks MCP Server
 
 Host Model Context Protocol (MCP) prompts and tools on Databricks Apps, enabling AI assistants like Claude to interact with your Databricks workspace.
-Inspiration - https://github.com/databricks-solutions/custom-mcp-databricks-app#
 
 ## What is this?
 
